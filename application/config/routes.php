@@ -56,6 +56,23 @@ $route['contato'] = "contato/index";
 $route['local'] = "local/index";
 $route['administracao'] = "administracao/login";
 
+/* Rotas de Administração */
+
+    $opcoes = [
+            'local',
+            'evento',
+            'cliente',
+            'usuario',
+            'pedidos'
+        ];
+
+    foreach($opcoes as $op){
+        $route['administracao/'.$op.'/novo'] = $op."/adicionar_".$op;
+        $route['administracao/'.$op.'/editar'] =  $op."/editar_".$op;
+        $route['administracao/'.$op.'/salvar'] =  $op."/salvar_".$op;
+        $route['administracao/'.$op.'/excluir'] =  $op."/excluir_".$op;
+    }
+
 //Não apagar por hora
 
 /*

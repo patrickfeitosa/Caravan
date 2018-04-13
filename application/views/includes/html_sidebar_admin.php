@@ -11,24 +11,25 @@
                     <p class="lead separador">Painel Administrativo</p>                    
                     
                     <li>                        
-                        <a href="<?php base_url() ?>home" data-click="inicio" <?php if($opcao=='home'){?> class='option-active'<?php }?>>Início</a>                        
+                        <a href="<?= base_url('administracao/home') ?>" data-click="inicio" <?php if($opcao=='home'){?> class='option-active'<?php }?>>Início</a>                        
                     </li>
-                    <li>
-                       
-                            <a href="<?php base_url() ?>locais" data-click="locais"  <?php if($opcao=='locais'){?>class='option-active'<?php }?>>Locais</a>
-  
+                    <li>                       
+                        <a href="<?= base_url('administracao/locais') ?>" data-click="locais"  <?php if($opcao=='locais'){?>class='option-active'<?php }?>>Locais</a>
+                    </li>
+                    <li>                       
+                        <a href="<?= base_url('administracao/eventos') ?>" data-click="eventos"  <?php if($opcao=='eventos'){?>class='option-active'<?php }?>>Eventos</a>
                     </li>
                     <li>                        
-                        <a href="<?php base_url() ?>clientes" data-click="clientes" <?php if($opcao=='clientes'){?>class='option-active'<?php }?>>Clientes</a>
+                        <a href="<?= base_url('administracao/clientes') ?>" data-click="clientes" <?php if($opcao=='clientes'){?>class='option-active'<?php }?>>Clientes</a>
                     </li>
                     <li>
-                        <a href="#" data-click="usuarios" <?php if($opcao=='usuarios'){?>class='option-active'<?php }?>>Usuários</a>
+                        <a href="<?= base_url('administracao/usuarios') ?>" data-click="usuarios" <?php if($opcao=='usuarios'){?>class='option-active'<?php }?>>Usuários</a>
                     </li>
                     <li>
-                        <a href="#" data-click="pedidos"  <?php if($opcao=='pedidos'){?>class='option-active'<?php }?>>Pedidos</a> 
+                        <a href="<?= base_url('administracao/pedidos') ?>" data-click="pedidos"  <?php if($opcao=='pedidos'){?>class='option-active'<?php }?>>Pedidos</a> 
                     </li>
                     <li>
-                        <a href="<?php base_url() ?>extrato" data-click="extratos" <?php if($opcao=='extratos'){?>class='option-active'<?php }?>>Extratos</a>
+                        <a href="<?= base_url('administracao/extrato') ?>" data-click="extratos" <?php if($opcao=='extratos'){?>class='option-active'<?php }?>>Extratos</a>
                     </li>
                     <li>
                         <a href="#" data-click="sair">Sair</a>

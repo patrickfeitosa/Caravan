@@ -37,7 +37,7 @@
 						<input type="text" id="inputCidade" class="form-control">
 					</div>
 					<div class="form-group col-md-3 col-6">
-						<label for="inputEstado">Cidade</label>
+						<label for="inputEstado">Estado</label>
 						<select class="form-control" id="inputEstado">
 							<option>Selecione o Estado</option>
 							<option>São Paulo</option>

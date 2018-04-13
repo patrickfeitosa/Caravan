@@ -6,7 +6,7 @@ class Administracao extends CI_Controller {
 
     public function login() {
         $this->load->view('includes/html_header');
-        $this->load->view('pages/admin/admin');
+        $this->load->view('pages/admin/main/admin');
         $this->load->view('includes/html_footer_admin');
     }
     
@@ -14,7 +14,7 @@ class Administracao extends CI_Controller {
         $data['opcao'] = 'home';
         $this->load->view('includes/html_header');
         $this->load->view('includes/html_sidebar_admin', $data);
-        $this->load->view('pages/admin/main_dashboard');
+        $this->load->view('pages/admin/main/main_dashboard');
         $this->load->view('includes/html_footer_dashboard');
     }
 
@@ -22,7 +22,7 @@ class Administracao extends CI_Controller {
         $data['opcao'] = 'extratos';      
         $this->load->view('includes/html_header');
         $this->load->view('includes/html_sidebar_admin', $data);
-        $this->load->view('pages/admin/extrato');
+        $this->load->view('pages/admin/main/extrato');
         $this->load->view('includes/html_footer_dashboard');
     }
 
@@ -30,7 +30,15 @@ class Administracao extends CI_Controller {
         $data['opcao'] = 'clientes';       
         $this->load->view('includes/html_header');
         $this->load->view('includes/html_sidebar_admin', $data);
-        $this->load->view('pages/admin/cliente');
+        $this->load->view('pages/admin/main/cliente');
+        $this->load->view('includes/html_footer_dashboard');
+    }
+
+    public function usuarios(){   
+        $data['opcao'] = 'usuarios';       
+        $this->load->view('includes/html_header');
+        $this->load->view('includes/html_sidebar_admin', $data);
+        $this->load->view('pages/admin/main/usuario');
         $this->load->view('includes/html_footer_dashboard');
     }
 
@@ -38,7 +46,23 @@ class Administracao extends CI_Controller {
         $data['opcao'] = 'locais';
         $this->load->view('includes/html_header');
         $this->load->view('includes/html_sidebar_admin', $data);
-        $this->load->view('pages/admin/locais-admin');
+        $this->load->view('pages/admin/main/locais-admin');
+        $this->load->view('includes/html_footer_dashboard');
+    }
+
+    public function eventos(){        
+        $data['opcao'] = 'eventos';
+        $this->load->view('includes/html_header');
+        $this->load->view('includes/html_sidebar_admin', $data);
+        $this->load->view('pages/admin/main/eventos-admin');
+        $this->load->view('includes/html_footer_dashboard');
+    }
+
+    public function pedidos(){        
+        $data['opcao'] = 'pedidos';
+        $this->load->view('includes/html_header');
+        $this->load->view('includes/html_sidebar_admin', $data);
+        $this->load->view('pages/admin/main/pedido');
         $this->load->view('includes/html_footer_dashboard');
     }
 }
