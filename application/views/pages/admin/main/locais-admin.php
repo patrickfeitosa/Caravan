@@ -14,7 +14,7 @@
                             <h2 class="font-weight-light">Listagem dos Locais</h2>
                         </div>
                         <div class="col-md-2 col-sm-12 float-right mb-3">
-                            <a href="<?=base_url();?>administracao/local/novo" class="btn btn-outline-success btn-block">Novo</a>                
+                            <a href="<?=base_url('administracao/local/novo');?>" class="btn btn-outline-success btn-block">Novo</a>                
                         </div>
                     </div>                   
                 </div>
@@ -29,21 +29,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">23/10</th>
-                            <td>Julian Baker</td>
-                            <td>The Academy</td>
-                            <td class="nav-item dropdown">
-                                <a class="btn btn-outline-secondary btn-sm dropdown-toggle" id="optionsUser"  role="button" data-toggle="dropdown" arial-haspopup="true" arial-expanded="false">Opções</a>
+                        <?php foreach ($locais as $local) { ?>
+                            <tr>
+                                <th scope="row"><?= $local->nomePais ?></th>
+                                <td><?= $local->nomeCity ?></td>
+                                <td><?= $local->precoLocal ?></td>
+                                <td class="nav-item dropdown">
+                                    <a class="btn btn-outline-secondary btn-sm dropdown-toggle" id="optionsUser"  role="button" data-toggle="dropdown" arial-haspopup="true" arial-expanded="false">Opções</a>
 
-                                <div class="dropdown-menu" aria-labelledby="optionsUser">
-                                    <a class="dropdown-item" href="<?= base_url(); ?>local">Editar</a>
-                                    <a class="dropdown-item" href="<?= base_url(); ?>local">Excluir</a>
-                                    <a class="dropdown-item" href="<?= base_url(); ?>local">Visualizar</a>
-                                </div>
-                            </td>					
-                        </tr>
+                                    <div class="dropdown-menu" aria-labelledby="optionsUser">
+                                        <a class="dropdown-item" href="<?= base_url('administracao/local/editar/'.$local->IDLocal); ?>">Editar</a>
+                                        <a class="dropdown-item" href="<?= base_url('administracao/local/excluir/'.$local->IDLocal); ?>" onclick="return confirm('Deseja realmente remover o local selecionado?');">Excluir</a>
+                                        <a class="dropdown-item" href="<?= base_url(); ?>">Visualizar</a>
+                                    </div>
+                                </td>					
+                            </tr>
+                        <?php }?>
                     </tbody>
                     
                 </table>
-            </div>

@@ -2,7 +2,7 @@
             <!-- Sidebar Holder -->
             <nav id="sidebar" class="bg-info side-box-shadow">
                 <div class="sidebar-header">
-                    <a href="<?php base_url() ?>home">
+                    <a href="<?= base_url('administracao/home') ?>">
                         <img src="<?= base_url(); ?>/assets/img/caravan.svg" alt="header-sidebar Caravan" class="center-item">
                     </a>
                 </div>
@@ -32,7 +32,7 @@
                         <a href="<?= base_url('administracao/extrato') ?>" data-click="extratos" <?php if($opcao=='extratos'){?>class='option-active'<?php }?>>Extratos</a>
                     </li>
                     <li>
-                        <a href="#" data-click="sair">Sair</a>
+                        <a href="<?= base_url('administracao/logout') ?>" data-click="sair" onclick="return confirm('Deseja realmente sair do Sistema?');">Sair</a>
                     </li>   
                 </ul>
             </nav>

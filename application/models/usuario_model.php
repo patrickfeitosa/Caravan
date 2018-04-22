@@ -1,50 +1,37 @@
 <?php
-
 class Usuario_model extends CI_Model {
-
     function __construct() {
         parent::__construct();
     }
 
-    public function cadastrar($data) {
-
-        return $this->db->insert('tb_usuarios', $data);
+    //Metodo para inserção de novo local
+    function inserir_usuario($data) {
+        return $this->db->insert('usuario', $data);
     }
 
-    public function salvar_atualizacao($data, $id) {
+    //Metodo para atualização de local existente
+    function salva_usuario($data, $id_usuario) {
+        $this->db->where('IDUsuario', $id_usuario);
+        return $this->db->update('usuario', $data);
 
-        $this->db->where('id', $id);
-        return $this->db->update('tb_usuarios', $data);
     }
 
-    public function salvar_senha($id, $senha_antiga, $senha_nova) {
-
-        $this->db->select('senha');
-        $this->db->where('id', $id);
-        $data['senha'] = $this->db->get('tb_usuarios')->result();
-        $dados['senha'] = $senha_nova;
-
-        if ($data['senha'][0]->senha == $senha_antiga) {
-            $this->db->where('id', $id);
-            $this->db->update('tb_usuarios', $dados);
-            return true;
-        } else {
-
-            return false;
-        }
-    }
-
+    //Metodo para seleção de todos os locais cadastrados
     function get_usuarios() {
         $this->db->select('*');
-        return $this->db->get('tb_usuarios')->result();
+        return $this->db->get('usuario')->result();
     }
 
-    function get_usuarios_like() {
-        $termo = $this->input->post('pesquisar');
+    //Metodo para seleção de local com where **IMPLEMENTAR**
+    function get_usuario($id_usuario) {
         $this->db->select('*');
-        $this->db->like('nome', $termo,'after');
-
-        return $this->db->get('tb_usuarios')->result();
+        $this->db->where('IDUsuario', $id_usuario);
+        return $this->db->get('usuario')->result();
     }
 
+    //Metodo para deleção de local
+    function deleta_usuario($id_usuario) {
+        $this->db->where('IDUsuario', $id_usuario);
+        return $this->db->delete('usuario');
+    }
 }

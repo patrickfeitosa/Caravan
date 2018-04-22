@@ -1,6 +1,3 @@
-create database caravan;
-use caravan;
-
 create table Usuario(
     IDUsuario int primary key,
     Nome varchar(255),

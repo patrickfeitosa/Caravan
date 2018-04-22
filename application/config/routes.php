@@ -67,12 +67,23 @@ $route['administracao'] = "administracao/login";
         ];
 
     foreach($opcoes as $op){
+        /* Rotas de CRUD */
         $route['administracao/'.$op.'/novo'] = $op."/adicionar_".$op;
-        $route['administracao/'.$op.'/editar'] =  $op."/editar_".$op;
-        $route['administracao/'.$op.'/salvar'] =  $op."/salvar_".$op;
-        $route['administracao/'.$op.'/excluir'] =  $op."/excluir_".$op;
+        $route['administracao/'.$op.'/editar/(:num)'] =  $op."/editar_".$op."/$1";
+        $route['administracao/'.$op.'/salvar'] =  $op."/salvar_".$op."/$1";
+        $route['administracao/'.$op.'/salvar_edicao'] =  $op."/salvar_".$op."_edicao";
+        $route['administracao/'.$op.'/excluir/(:num)'] =  $op."/excluir_".$op."/$1";
+
+        /* Rotas de UI */
+        $route['administracao/'.$op.'/success'] = $op.'/success';
+        $route['administracao/'.$op.'/error'] = $op.'/error';        
     }
 
+/* Rotas para Locais (Client View)*/
+
+
+
+/*********************/
 //Não apagar por hora
 
 /*

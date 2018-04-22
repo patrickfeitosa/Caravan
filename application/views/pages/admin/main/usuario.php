@@ -23,29 +23,28 @@
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
-                            <th scope="col">Usuário</th>
+                            <th scope="col">E-mail</th>
                             <th scope="col">CPF</th>
-                            <th scope="col">Último Pedido</th>
                             <th scope="col">Dados</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">23/10</th>
-                            <td>Julian Baker</td>
-                            <td>The Academy</td>
-                            <td><a href="#" class="active-option">12345678</a></td>
-                            <td class="nav-item dropdown">
-                                <a class="btn btn-outline-secondary btn-sm dropdown-toggle" id="optionsUser"  role="button" data-toggle="dropdown" arial-haspopup="true" arial-expanded="false">Opções</a>
-
-                                <div class="dropdown-menu" aria-labelledby="optionsUser">
-                                    <a class="dropdown-item" href="<?= base_url(); ?>local">Editar</a>
-                                    <a class="dropdown-item" href="<?= base_url(); ?>local">Excluir</a>
-                                    <a class="dropdown-item" href="<?= base_url(); ?>local">Visualizar</a>
-                                </div>
-                            </td>					
-                        </tr>
+                        <?php foreach($usuarios as $usuario) { ?>
+                            <tr>
+                                <th scope="row"><?= $usuario->Nome ?></th>
+                                <td><?= $usuario->Email ?></td>
+                                <td><?= $usuario->CPF ?></td>
+                                <td class="nav-item dropdown">
+                                    <a class="btn btn-outline-secondary btn-sm dropdown-toggle" id="optionsUser"  role="button" data-toggle="dropdown" arial-haspopup="true" arial-expanded="false">Opções</a>
+                                    
+                                    <div class="dropdown-menu" aria-labelledby="optionsUser">
+                                        <a class="dropdown-item" href="<?= base_url('administracao/usuario/editar/'.$usuario->IDUsuario); ?>">Editar</a>
+                                        <a class="dropdown-item" href="<?= base_url('administracao/usuario/excluir/'.$usuario->IDUsuario); ?>" onclick="return confirm('Deseja realmente remover o local selecionado?');">Excluir</a>
+                                        <a class="dropdown-item" href="<?= base_url(); ?>local">Visualizar</a>
+                                    </div>
+                                </td>					
+                            </tr>
+                        <?php } ?>    
                     </tbody>
                     
                 </table>
-            </div>

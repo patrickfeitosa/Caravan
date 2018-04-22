@@ -1,3 +1,4 @@
+
             <div id="content" class="bg-dark text-white">
             <span class="mobile-btn"></span>
                 <div class="container-fluid">
@@ -31,15 +32,15 @@
                     
                     <div class="tab-content bg-info p-2">
                         <div id="pedidoHoje" class="tab-pane fade in active show">
-                            <canvas id="graficoPedidoHoje" class="bg-white"></canvas>    
+                            <canvas id="graficoPedidoHoje"></canvas>    
                         </div>
 
                         <div id="pedidoSemana" class="tab-pane fade">
-                            <canvas id="graficoPedidoSemana" class="bg-white"></canvas>
+                            <canvas id="graficoPedidoSemana"></canvas>
                         </div>
                         
                         <div id="pedidoMes" class="tab-pane fade">
-                            <canvas id="graficoPedidoMes" class="bg-white"></canvas>
+                            <canvas id="graficoPedidoMes"></canvas>
                         </div>                    
                     </div>
                    
@@ -64,15 +65,12 @@
                     
                     <div class="tab-content bg-info p-2">
                         <div id="locaisAcessados" class="tab-pane fade in active show">
-                            <canvas id="graficoLocaisAcessados" class="bg-white"></canvas>    
+                            <canvas id="graficoLocaisAcessados"></canvas>    
                         </div>
 
                         <div id="eventosLocal" class="tab-pane fade">
-                            <canvas id="graficoEventosLocal" class="bg-white"></canvas>
+                            <canvas id="graficoEventosLocal"></canvas>
                         </div>                                      
                     </div>
                 </div>
             </div>
-
-	    <script type="text/javascript" src="<?= base_url(); ?>assets/js/libs/charts.js"></script>
-        <script type="text/javascript" src="<?= base_url(); ?>assets/js/graficos.js"></script>

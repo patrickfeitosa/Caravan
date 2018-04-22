@@ -1,6 +1,6 @@
- <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-<div class="alert alert-success" role="alert">
-<?= $msg; ?>
-
+        <div class="row">
+            <div class="col col-md-12">
+                <h5 class="alert alert-success text-center"> <?= $msg; ?> </h5>
+            </div>
+        </div>    
 </div>
-     </div>

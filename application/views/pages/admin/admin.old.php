@@ -6,7 +6,7 @@
                     <h3 class="display-5 text-center pb-2">Bem-vindo</h3>
                     <div class="form-group pt-2">
                         <label for="userLogin">Usuário:</label>
-                        <input type="text" name="userLogin" id="userLogin" class="form-control">
+                        <input type="email" name="userLogin" id="userLogin" class="form-control">
                     </div>
 
                     <div class="form-group py-2">
@@ -18,3 +18,4 @@
                 </form>
             </div>
         </div>
+    </div>
