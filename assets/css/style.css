@@ -2,6 +2,15 @@
 	padding-top: 76px;
 }
 
+.no-padding{
+	padding-right: 0 !important;
+	padding-left: 0 !important; 
+}
+
+.hide-content{
+	display: none;
+}
+
 .separador::before, .separador::after {
 	content: '';
 	display: block;

@@ -8,12 +8,22 @@
                     </div>                    
                 </div>
 
-                <div class="container-fluid mt-5" data-group="graficosPedidos">
+                <div class="container-fluid mt-5 mb-4" data-group="graficosPedidos">
                     <div class="row">
-                        <div class="col col-md-12 mb-3">
+                        <div class="col col-md-12 mb-3 no-padding">
                             <h2 class="font-weight-light">Listagem dos Clientes</h2>
                         </div>
-                    </div>                   
+                    </div>         
+                    
+                    <div class="row">                 
+                        <div class="col-md-12 no-padding">           
+                            <form id="search-form">
+                                <div class="col-md-4 col-sm-12 no-padding">
+                                    <input type="text" id="search-content" class="form-control" placeholder="Pesquisar...">       
+                                </div>
+                            </form>  
+                        </div>
+                    </div>           
                 </div>
 
                 <table class="table table-hover table-responsive-md">
@@ -26,9 +36,9 @@
                             <th scope="col">Dados</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="content-body">
                         <tr>
-                            <th scope="row">23/10</th>
+                            <td>23/10</td>
                             <td>Julian Baker</td>
                             <td>The Academy</td>
                             <td><a href="#" class="active-option">12345678</a></td>

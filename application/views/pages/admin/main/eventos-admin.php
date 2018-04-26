@@ -7,16 +7,27 @@
                         </div>
                     </div>                    
                 </div>
-                               
-                <div class="container-fluid mt-5" data-group="graficosPedidos">
+
+                <div class="container-fluid mt-5 mb-4" data-group="graficosPedidos">
                     <div class="row">
-                        <div class="col col-md-10 mb-3">
+                        <div class="col col-md-12 mb-3 no-padding">
                             <h2 class="font-weight-light">Listagem dos Eventos</h2>
                         </div>
-                        <div class="col-md-2 col-sm-12 float-right mb-3">
+                    </div>         
+                    
+                    <div class="row">                 
+                        <div class="col-md-10 no-padding">           
+                            <form id="search-form">
+                                <div class="col-md-4 col-sm-12 no-padding">
+                                    <input type="text" id="search-content" class="form-control" placeholder="Pesquisar...">       
+                                </div>
+                            </form>  
+                        </div>
+
+                        <div class="col-md-2 col-sm-12 float-right no-padding">
                             <a href="<?=base_url('administracao/evento/novo');?>" class="btn btn-outline-success btn-block">Novo</a>                
                         </div>
-                    </div>                   
+                    </div>           
                 </div>
 
                 <table class="table table-hover">
@@ -30,10 +41,10 @@
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="content-body">
                         <?php foreach($eventos as $evento) { ?>
                             <tr>
-                                <th scope="row"><?= $evento->Data_Evento ?></th>
+                                <td><?= $evento->Data_Evento ?></td>
                                 <td><?= $evento->Evento ?></td>
                                 <td><?= $evento->nomeCity ?></td>
                                 <td><?= $evento->Local_Evento ?></td>
