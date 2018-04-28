@@ -21,9 +21,9 @@
 						<div class="form-group">
 							<select class="form-control bg-light" id="inputCidades">
 								<option>Selecione a Cidade</option>
-								<option>California</option>
-								<option>Paris</option>
-								<option>Dublin</option>
+								<?php foreach($locais as $local) { ?>
+									<option value="<?= $local->IDLocal ?>"><?= $local->nomeCity ?></option>
+								<?php } ?>
 							</select>
 						</div>
 					</form>
@@ -53,9 +53,9 @@
 						<div class="form-group">
 							<select class="form-control bg-light" id="inputCidades">
 								<option>Selecione a Cidade</option>
-								<option>California</option>
-								<option>Paris</option>
-								<option>Dublin</option>
+								<?php foreach($locais as $local) { ?>
+									<option value="<?= $local->IDLocal ?>"><?= $local->nomeCity ?></option>
+								<?php } ?>
 							</select>
 						</div>
 					</form>

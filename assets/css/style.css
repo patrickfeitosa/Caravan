@@ -1,3 +1,8 @@
+.centered{
+	margin: 0 auto !important;
+	float: none !important;
+}
+
 .body-main{
 	padding-top: 76px;
 }

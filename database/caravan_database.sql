@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Abr-2018 às 04:03
--- Versão do servidor: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: 25-Abr-2018 às 21:52
+-- Versão do servidor: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,17 +32,17 @@ CREATE TABLE `eventos` (
   `IDEvento` int(11) NOT NULL,
   `IDLocal` int(11) NOT NULL,
   `Evento` varchar(255) NOT NULL,
-  `Data_Evento` varchar(10) NOT NULL,
+  `Local_Evento` varchar(255) NOT NULL,
   `Preco_Evento` varchar(20) NOT NULL,
-  `Local_Evento` varchar(255) NOT NULL
+  `Data_Evento` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `eventos`
 --
 
-INSERT INTO `eventos` (`IDEvento`, `IDLocal`, `Evento`, `Data_Evento`, `Preco_Evento`, `Local_Evento`) VALUES
-(1, 10, 'Show do Ozzy Osbourne', '22/05/2018', '150,00', 'Planalto');
+INSERT INTO `eventos` (`IDEvento`, `IDLocal`, `Evento`, `Local_Evento`, `Preco_Evento`, `Data_Evento`) VALUES
+(1, 4, 'Show do Ozzy Osbourne', 'Lá em cima', '350,00', '24/04/2018');
 
 -- --------------------------------------------------------
 
@@ -74,9 +74,8 @@ CREATE TABLE `locais` (
 --
 
 INSERT INTO `locais` (`IDLocal`, `nomePais`, `nomeCity`, `precoLocal`) VALUES
-(9, 'Brasil', 'Cuiabá', '1.200,00'),
-(10, 'Brasil', 'Brasilia', '22,22'),
-(11, 'Russia', 'Moscow', '5.600,00');
+(3, 'Cansei', 'Cuiabá', '300,00'),
+(4, 'Japão', 'Tokyo', '15.000,00');
 
 -- --------------------------------------------------------
 
@@ -116,8 +115,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`IDUsuario`, `Nome`, `CPF`, `Email`, `Senha`, `Endereco`, `Cidade`, `Estado`, `CEP`, `flg_admin`) VALUES
-(1, 'Administrador Editado', '430.859.258-56', 'admin@caravan.com.br', '123456', 'Rua Teste', 'São Paulo', 'RS', '02813-000', 'true'),
-(5, 'Felipe Editado', '111.111.111-11', 'felipe@caravan.com.br', '123', 'Rua FMU', 'São Paulo', 'SP', '02813-000', 'true');
+(1, 'Administrador', '430.859.258-56', 'admin@caravan.com.br', '123456', 'Rua de Teste', 'São Paulo', 'SP', '02813-654', 'true');
 
 --
 -- Indexes for dumped tables
@@ -162,31 +160,26 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `eventos`
   MODIFY `IDEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `imagem`
 --
 ALTER TABLE `imagem`
   MODIFY `IDImagem` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `locais`
 --
 ALTER TABLE `locais`
-  MODIFY `IDLocal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `IDLocal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
   MODIFY `IDPedido` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-COMMIT;
+  MODIFY `IDUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

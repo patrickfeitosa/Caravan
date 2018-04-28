@@ -28,6 +28,61 @@ $('[data-type]').each(function(){
 var countComponents = 0;
 var componentsNotEmpty = 0;
 var components = new Array();
+var confirmaSenha, senha, target;
+
+//Verificando todos os elementos do formulário de cliente
+$('[data-required-client]').each(function(){
+
+	countComponents++;
+
+	//Na edição, verificando quantos já estão preenchidos
+	if($(this).val().length > 1){
+		componentsNotEmpty++;
+		components.push($(this).data('required-client'));
+	}
+
+	$(this).focusout(function(){		
+	
+
+		//Variáveis de Controle Global
+		confirmaSenha = $('#inputConfirmeSenha').val();
+		senha = $('#inputSenha').val();
+		target = $(this).data('required-client');
+
+		if(($(this).val() == "" || $(this).val() == null) && verificaJaAdicionado(target)){
+
+			//Removendo do Array de Controle 
+			removeJaAdicionado(target);
+			componentsNotEmpty--;
+			document.getElementById("confirmSubmit").disabled = true;
+
+		} else if ($(this).val() != "" && componentsNotEmpty < countComponents && !verificaJaAdicionado(target)){
+			
+			//Criando Array de Controle e incrementando campos não vazio
+			components.push(target);
+			componentsNotEmpty++;	
+
+		} else if (componentsNotEmpty == countComponents && validaSenha(senha, confirmaSenha) && $('#checkTerm').is(':checked')){
+			
+			//Habilitando botão de envio
+			document.getElementById("confirmSubmit").disabled = false;
+
+		} else {
+			document.getElementById("confirmSubmit").disabled = true;
+			$('#checkTerm').click(function(){
+				if(componentsNotEmpty == countComponents && validaSenha(senha, confirmaSenha) && $(this).is(':checked')){
+					document.getElementById("confirmSubmit").disabled = false;
+				} else {
+					document.getElementById("confirmSubmit").disabled = true;
+				}	
+			});
+		}
+
+		console.log(components);
+		console.log(countComponents);
+		console.log(componentsNotEmpty);
+	});
+});
 
 //Verificando todos os elementos do formulário de usuário
 $('[data-required-user]').each(function(){
@@ -40,7 +95,8 @@ $('[data-required-user]').each(function(){
 		components.push($(this).data('required-user'));
 	}
 	
-	$(this).focusout(function(){
+	$(this).focusout(function(){		
+	
 
 		//Variáveis de Controle Global
 		var confirmaSenha = $('#inputConfirmeSenha').val();
@@ -65,7 +121,20 @@ $('[data-required-user]').each(function(){
 			components.push(target);
 			componentsNotEmpty++;	
 
-		} else{
+		} else if($(this).is(':checked')){
+
+			//Criando Array de Controle e incrementando campos não vazio
+			components.push(target);
+			componentsNotEmpty++;
+
+		} else if (!$(this).is(':checked')){
+
+			//Removendo do Array de Controle 
+			removeJaAdicionado(target);
+			componentsNotEmpty--;
+			document.getElementById("confirmSubmit").disabled = true;
+
+		} else {
 			document.getElementById("confirmSubmit").disabled = true;
 		}
 	});

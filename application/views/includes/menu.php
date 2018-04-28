@@ -14,19 +14,19 @@
 					<a class="nav-link dropdown-toggle active" id="menuLocais"  role="button" data-toggle="dropdown" arial-haspopup="true" arial-expanded="false">Locais</a>
 
 					<div class="dropdown-menu" aria-labelledby="menuLocais">
-						<a class="dropdown-item" href="<?= base_url(); ?>local">California</a>
-						<a class="dropdown-item" href="<?= base_url(); ?>local">Paris</a>
-						<a class="dropdown-item" href="<?= base_url(); ?>local">Dublin</a>
+						<a class="dropdown-item" href="<?= base_url('local'); ?>">California</a>
+						<a class="dropdown-item" href="<?= base_url('local'); ?>">Paris</a>
+						<a class="dropdown-item" href="<?= base_url('local'); ?>">Dublin</a>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url(); ?>planos">Planos</a>
+					<a class="nav-link" href="<?= base_url('planos'); ?>">Planos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url(); ?>contato">Contato</a>
+					<a class="nav-link" href="<?= base_url('contato'); ?>">Contato</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="modal" data-target="#modalLogin">Login</a>
+					<a class="nav-link" href="<?= base_url('cliente/acessar'); ?>" data-toggle="modal" data-target="#modalLogin">Login</a>
 				</li>
 				<li class="nav-item">
 					<a class="btn btn-outline-primary ml-md-2" href="<?= base_url(); ?>inscricao">Inscreva-se</a>
