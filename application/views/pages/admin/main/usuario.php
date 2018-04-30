@@ -51,7 +51,7 @@
                                     <div class="dropdown-menu" aria-labelledby="optionsUser">
                                         <a class="dropdown-item" href="<?= base_url('administracao/usuario/editar/'.$usuario->IDUsuario); ?>">Editar</a>
                                         <a class="dropdown-item" href="<?= base_url('administracao/usuario/excluir/'.$usuario->IDUsuario); ?>" onclick="return confirm('Deseja realmente remover o local selecionado?');">Excluir</a>
-                                        <a class="dropdown-item" href="<?= base_url(); ?>local">Visualizar</a>
+                                        <a class="dropdown-item" onclick="openViewClientAndUser('<?= base_url('administracao/usuario/visualizar/'.$usuario->IDUsuario); ?>')" data-toggle="modal" data-target="#modalInformation">Visualizar</a>
                                     </div>
                                 </td>					
                             </tr>
@@ -59,3 +59,41 @@
                     </tbody>
                     
                 </table>
+
+                <!-- Implementação do Modal -->
+                <div class="modal fade" id="modalInformation" tabindex="-1" role="dialog" aria-labelledby="modalInformation" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLoginTitulo">Informações do Usuário</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="my-2">
+                                    <strong>Nome: </strong><span id="nomeCliente"></span>
+                                </div>
+                                <div class="my-2">
+                                    <strong>E-mail: </strong><span id="emailCliente"></span>
+                                </div>
+                                <div class="my-2">
+                                    <strong>CPF: </strong><span id="cpfCliente"></span>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Endereço: </strong><span id="enderecoCliente"></span>
+                                </div>
+                                <div class="my-2">
+                                    <strong>CEP: </strong><span id="cepCliente"></span>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Cidade: </strong><span id="cidadeCliente"></span>
+                                </div>
+                                <div class="my-2">
+                                    <strong>Estado: </strong><span id="estadoCliente"></span>
+                                </div>
+                            <div>				
+                        </div>
+                    </div>
+                </div>
+                <!-- Finalização do Modal -->

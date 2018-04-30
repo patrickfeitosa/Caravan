@@ -159,4 +159,11 @@ class Usuario extends CI_Controller {
         $this->load->view('includes/msg_erro', $data);   
         $this->load->view('includes/html_footer_dashboard');
     }
+
+    public function visualizar_usuario($IDUsuario){
+        
+        //Carregando o Model responsavel pelo Controller
+        $this->load->model('usuario_model', 'usuario');
+        echo json_encode($this->usuario->get_usuario($IDUsuario));  
+    }    
 }

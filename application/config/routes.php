@@ -78,24 +78,14 @@ $route['cliente'] = "cliente/index";
 
         /* Rotas de UI */
         $route['administracao/'.$op.'/success'] = $op.'/success';
-        $route['administracao/'.$op.'/error'] = $op.'/error';        
+        $route['administracao/'.$op.'/error'] = $op.'/error';      
+        
+        /* Rota exclusiva para tratativa de Ajax */
+        $route['administracao/'.$op.'/visualizar/(:num)'] =  $op."/visualizar_".$op."/$1";  
+
     }
 
 /* Rotas para Locais (Client View)*/
 
-
-
-/*********************/
-//Não apagar por hora
-
-/*
-$route['usuario/(:num)'] = "usuario/index/$1";
-$route['jornalista/(:num)'] = "jornalista/index/$1";
-$route['multa/(:num)'] = "multa/index/$1";
-$route['veiculo/(:num)'] = "veiculo/index/$1";
-$route['veiculo_comunicacao/(:num)'] = "veiculo_comunicacao/index/$1";
-$route['manutencao/(:num)'] = "manutencao/index/$1";
-$route['saida/(:num)'] = "saida/index/$1";
-*/
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = true;

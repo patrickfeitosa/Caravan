@@ -7,7 +7,7 @@
 		</div>
 
 		<div class="row">
-			<form class="col-lg-8 centered" action="<?= base_url('cliente/cadastrar'); ?>">
+			<form class="col-lg-8 centered" action="<?= base_url('cliente/cadastrar'); ?>" method="POST">
 				<div class="form-row">
                     <div class="form-group col-md-6">
 						<label for="inputNome">Nome</label>

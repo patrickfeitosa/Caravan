@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="<?= base_url(); ?>assets/js/app.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>assets/js/userInteraction.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>assets/js/filterTable.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>assets/js/ajaxRequisition.js"></script>
 
 </body>
 </html>

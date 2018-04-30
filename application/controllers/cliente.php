@@ -39,4 +39,11 @@ class Cliente extends CI_Controller {
         }
     }
 
+    public function visualizar_cliente($IDUsuario){
+        
+        //Carregando o Model responsavel pelo Controller
+        $this->load->model('usuario_model', 'usuario');
+        echo json_encode($this->usuario->get_cliente($IDUsuario));  
+    }    
+
 }

@@ -78,10 +78,14 @@ class Administracao extends CI_Controller {
         //Metodo para verificar atividade de usuário logado
         $this->verificar_sessao();
 
+        //Carregamento do Model para listar clientes na tableView
+        $this->load->model('usuario_model', 'usuario');
+        $dados['clientes'] = $this->usuario->get_clientes();         
+
         $data['opcao'] = 'clientes';       
         $this->load->view('includes/html_header');
         $this->load->view('includes/html_sidebar_admin', $data);
-        $this->load->view('pages/admin/main/cliente');
+        $this->load->view('pages/admin/main/cliente', $dados);
         $this->load->view('includes/html_footer_dashboard');
     }
 
@@ -90,7 +94,7 @@ class Administracao extends CI_Controller {
         //Metodo para verificar atividade de usuário logado
         $this->verificar_sessao();
 
-        //Carregamento do Model para listar locais na tableView
+        //Carregamento do Model para listar usuários na tableView
         $this->load->model('usuario_model', 'usuario');
         $dados['usuarios'] = $this->usuario->get_usuarios();         
 
@@ -128,7 +132,7 @@ class Administracao extends CI_Controller {
         //Metodo para verificar atividade de usuário logado
         $this->verificar_sessao();
 
-        //Carregamento do Model para listar locais na tableView
+        //Carregamento do Model para listar eventos na tableView
         $this->load->model('evento_model', 'evento');
         $dados['eventos'] = $this->evento->get_eventos();  
 
