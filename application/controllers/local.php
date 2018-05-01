@@ -125,4 +125,11 @@ class Local extends CI_Controller {
         $this->load->view('includes/html_footer_dashboard');
     }
 
+    public function visualizar_local($IDLocal){
+        
+        //Carregando o Model responsavel pelo Controller
+        $this->load->model('local_model', 'local');
+        echo json_encode($this->local->get_local($IDLocal));  
+    }    
+
 }

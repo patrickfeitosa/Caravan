@@ -61,7 +61,7 @@
                 </table>
 
                 <!-- Implementação do Modal -->
-                <div class="modal fade" id="modalInformation" tabindex="-1" role="dialog" aria-labelledby="modalInformation" aria-hidden="true">
+                <div class="modal fade text-dark" id="modalInformation" tabindex="-1" role="dialog" aria-labelledby="modalInformation" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">

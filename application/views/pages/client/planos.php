@@ -19,7 +19,7 @@
 					</ul>
 					<form>
 						<div class="form-group">
-							<select class="form-control bg-light" id="inputCidades">
+							<select class="form-control bg-light" id="inputCidadesGold">
 								<option>Selecione a Cidade</option>
 								<?php foreach($locais as $local) { ?>
 									<option value="<?= $local->IDLocal ?>"><?= $local->nomeCity ?></option>
@@ -33,7 +33,7 @@
 						</div>
 
 						<div class="col">
-							<span class="h4">R$5.000</span>
+							<span class="h4" id="precoLocalGold" data-type="Preco" ></span>
 						</div>
 					</div>
 				</div>
@@ -51,7 +51,7 @@
 					</ul>
 					<form>
 						<div class="form-group">
-							<select class="form-control bg-light" id="inputCidades">
+							<select class="form-control bg-light" id="inputCidadesPlantinum">
 								<option>Selecione a Cidade</option>
 								<?php foreach($locais as $local) { ?>
 									<option value="<?= $local->IDLocal ?>"><?= $local->nomeCity ?></option>
@@ -65,7 +65,7 @@
 						</div>
 
 						<div class="col">
-							<span class="h4">R$7.500</span>
+							<span class="h4" id="precoLocalPlantinum" data-type="Preco" >R$7.500</span>
 						</div>
 					</div>
 				</div>
