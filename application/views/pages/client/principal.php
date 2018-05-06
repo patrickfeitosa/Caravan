@@ -116,7 +116,7 @@
 			</div>
 
 			<div>
-				<a href="planos.html" class="btn btn-primary btn-lg mt-5">Comprar Plano</a>
+				<a href="<?= base_url('planos'); ?>" class="btn btn-primary btn-lg mt-5">Comprar Plano</a>
 			</div>
 		</div>
 	</section>

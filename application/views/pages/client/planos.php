@@ -17,25 +17,27 @@
 						<li>→ Tudo pago pela empresa</li>
 						<li>→ Ingressos pra festas</li>
 					</ul>
-					<form>
+					<form action="<?= base_url('planos/adiciona_carrinho_gold'); ?>" method="post">
 						<div class="form-group">
-							<select class="form-control bg-light" id="inputCidadesGold">
-								<option>Selecione a Cidade</option>
+							<select class="form-control bg-light" id="inputCidadesGold" name="inputCidades">
+								<option value="">Selecione a Cidade</option>
 								<?php foreach($locais as $local) { ?>
 									<option value="<?= $local->IDLocal ?>"><?= $local->nomeCity ?></option>
 								<?php } ?>
 							</select>
 						</div>
-					</form>
-					<div class="row align-items-center mt-4">
-						<div class="col">
-							<a href="#" class="btn btn-primary btn-lg d-block">Comprar Plano</a>
-						</div>
+						<div class="row align-items-center mt-4">
+							<div class="col">
+								<button type="submit" class="btn btn-primary btn-lg d-block" id="confirmSubmitGold" disabled>Comprar Plano</button>
+							</div>
 
-						<div class="col">
-							<span class="h4" id="precoLocalGold" data-type="Preco" ></span>
+							<div class="col">
+								<span class="h4" id="precoLocalGold" data-type="Preco" ></span>
+								<input type="hidden" id="localGold" name="precoLocal" >
+								<input type="hidden" name="tipoPlano" value="Gold" >
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 
@@ -49,25 +51,27 @@
 						<li>→ Tudo pago pela empresa</li>
 						<li>→ Ingressos pra festas</li>
 					</ul>
-					<form>
+					<form action="<?= base_url('planos/adiciona_carrinho_platinum'); ?>" method="post">
 						<div class="form-group">
-							<select class="form-control bg-light" id="inputCidadesPlantinum">
-								<option>Selecione a Cidade</option>
+							<select class="form-control bg-light" id="inputCidadesPlantinum" name="inputCidades">
+								<option value="">Selecione a Cidade</option>
 								<?php foreach($locais as $local) { ?>
 									<option value="<?= $local->IDLocal ?>"><?= $local->nomeCity ?></option>
 								<?php } ?>
 							</select>
 						</div>
-					</form>
-					<div class="row align-items-center mt-4">
-						<div class="col">
-							<a href="#" class="btn btn-primary btn-lg d-block">Comprar Plano</a>
-						</div>
+						<div class="row align-items-center mt-4">
+							<div class="col">
+								<button type="submit" class="btn btn-primary btn-lg d-block" id="confirmSubmitPlatinum" disabled>Comprar Plano</button>
+							</div>
 
-						<div class="col">
-							<span class="h4" id="precoLocalPlantinum" data-type="Preco" >R$7.500</span>
+							<div class="col">
+								<span class="h4" id="precoLocalPlantinum" data-type="Preco" ></span>
+								<input type="hidden" id="localPlantinum" name="precoLocal" >
+								<input type="hidden" name="tipoPlano" value="Platinum" >
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>	

@@ -77,10 +77,6 @@ $('[data-required-client]').each(function(){
 				}	
 			});
 		}
-
-		console.log(components);
-		console.log(countComponents);
-		console.log(componentsNotEmpty);
 	});
 });
 
@@ -96,12 +92,16 @@ $('[data-required-user]').each(function(){
 	}
 	
 	$(this).focusout(function(){		
-	
 
 		//Variáveis de Controle Global
 		var confirmaSenha = $('#inputConfirmeSenha').val();
 		var senha = $('#inputSenha').val();
 		var target = $(this).data('required-user');
+		var data = $(this).val();
+
+		data = data.replace('_','');
+
+		console.log(data);
 
 		if(($(this).val() == "" || $(this).val() == null) && verificaJaAdicionado(target)){
 
@@ -121,18 +121,12 @@ $('[data-required-user]').each(function(){
 			components.push(target);
 			componentsNotEmpty++;	
 
-		} else if($(this).is(':checked')){
+			//Revalidando a condicional para habilitar o botão
+			if (componentsNotEmpty == countComponents && validaSenha(senha, confirmaSenha)){	
 
-			//Criando Array de Controle e incrementando campos não vazio
-			components.push(target);
-			componentsNotEmpty++;
-
-		} else if (!$(this).is(':checked')){
-
-			//Removendo do Array de Controle 
-			removeJaAdicionado(target);
-			componentsNotEmpty--;
-			document.getElementById("confirmSubmit").disabled = true;
+				//Se todos os campos foram preenchidos e as senhas são iguais
+				document.getElementById("confirmSubmit").disabled = false;
+			}
 
 		} else {
 			document.getElementById("confirmSubmit").disabled = true;
@@ -163,7 +157,7 @@ function validaSenha(senha, confirmaSenha){
 	}
 }
 
-/* Tratativa dos Formulários que não precisamd e validação de senha */
+/* Tratativa dos Formulários que não precisam de validação de senha */
 
 $('[data-required]').each(function(){
 
@@ -217,3 +211,22 @@ $('[data-required]').each(function(){
 
 
 /* Fim Estrutura para Tratativa de formulários que os campos precisam estar preenchidos */
+
+/* Tratativa para adição de plano no carrinho */
+$("#inputCidadesGold").change(function(){
+	if($(this).val() == ""){
+		document.getElementById("confirmSubmitGold").disabled = true;
+		$("#precoLocalGold").html("");
+	} else {
+		document.getElementById("confirmSubmitGold").disabled = false;
+	}
+});
+
+$("#inputCidadesPlantinum").change(function(){
+	if($(this).val() == ""){
+		document.getElementById("confirmSubmitPlatinum").disabled = true;precoLocalPlantinum
+		$("#precoLocalPlantinum").html("");
+	} else {
+		document.getElementById("confirmSubmitPlatinum").disabled = false;
+	}
+});

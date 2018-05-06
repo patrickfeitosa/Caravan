@@ -49,14 +49,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+/* Rotas Padrões */
+$route['cliente'] = "cliente/index";
 $route['default_controller'] = 'principal';
 $route['planos'] = "planos/index";
 $route['inscricao'] = "inscricao/index";
 $route['contato'] = "contato/index";
 $route['local'] = "local/index";
 $route['administracao'] = "administracao/login";
+
+/* Rotas de Cliente ** Administração de Perfil ** */
+
 $route['cliente/acessar'] = "cliente/logar";
-$route['cliente'] = "cliente/index";
+$route['cliente/sair'] = "cliente/logout";
+
+$route['cliente/perfil'] = "cliente/carregar_perfil";
+$route['cliente/pedidos'] = "cliente/carregar_pedidos";
+
+$route['cliente/editar'] = "cliente/editar_perfil";
+$route['cliente/salvar'] = "cliente/salvar_cliente_edicao";
+
+/* Rotas para Criação de um novo pedido/carrinho */
+$route['carrinho'] = "pedidos/carrinho";
+$route['planos/adiciona_carrinho_gold'] = "pedidos/adiciona_carrinho";
+$route['planos/adiciona_carrinho_platinum'] = "pedidos/adiciona_carrinho";
 
 /* Rotas de Administração */
 

@@ -78,11 +78,11 @@
 					<form action="<?= base_url('cliente/acessar'); ?>" method="post">
 						<div class="form-group">
 							<label for="loginEmail">Email</label>
-							<input type="email" class="form-control" id="loginEmail">
+							<input type="email" class="form-control" id="loginEmail" name="loginEmail">
 						</div>
 						<div class="form-group">
 							<label for="loginSenha">Password</label>
-							<input type="password" class="form-control" id="loginSenha">
+							<input type="password" class="form-control" id="loginSenha" name="loginSenha">
 						</div>
 						
 						<button type="submit" class="btn btn-primary">Entrar na conta</button>

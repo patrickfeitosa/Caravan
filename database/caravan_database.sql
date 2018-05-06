@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Abr-2018 às 21:52
+-- Generation Time: 03-Maio-2018 às 21:56
 -- Versão do servidor: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -115,7 +115,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`IDUsuario`, `Nome`, `CPF`, `Email`, `Senha`, `Endereco`, `Cidade`, `Estado`, `CEP`, `flg_admin`) VALUES
-(1, 'Administrador', '430.859.258-56', 'admin@caravan.com.br', '123456', 'Rua de Teste', 'São Paulo', 'SP', '02813-654', 'true');
+(1, 'Administrador', '430.859.258-56', 'admin@caravan.com.br', '123456', 'Rua de Teste', 'São Paulo', 'SP', '02813-654', 'true'),
+(2, 'Patrick Vieira Feitosa Editado', '430.859.258-56', 'patrick@caravan.com.br', '123', 'Rua Teste', 'São Paulo', 'SP', '02813-000', 'false');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +180,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `IDUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

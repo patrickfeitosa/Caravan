@@ -43,6 +43,7 @@ $('#inputCidadesGold').change(function(){
 		success: function(dados){
             for(var i=0;dados.length>i;i++){
                 $('#precoLocalGold').html("R$ " + dados[i].precoLocal);
+                $('#localGold').val(dados[i].precoLocal);
             }
 		}
 	});
@@ -60,6 +61,7 @@ $('#inputCidadesPlantinum').change(function(){
                 var finalPrice = parseFloat(price.split(",").join(".")) * 1.5;
                 finalPrice = finalPrice.toString().split(".").join(",");
                 $('#precoLocalPlantinum').html("R$ " + finalPrice);
+                $('#localPlantinum').val(finalPrice);
             }
 		}
 	});

@@ -3,13 +3,12 @@
 	float: none !important;
 }
 
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
 .body-main{
 	padding-top: 76px;
-}
-
-.no-padding{
-	padding-right: 0 !important;
-	padding-left: 0 !important; 
 }
 
 .hide-content{
@@ -72,6 +71,10 @@
 	}
 
 	body{
+		padding-top: 0;
+	}
+
+	.body-main{
 		padding-top: 0;
 	}
 

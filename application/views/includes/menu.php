@@ -25,12 +25,29 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('contato'); ?>">Contato</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('cliente/acessar'); ?>" data-toggle="modal" data-target="#modalLogin">Login</a>
-				</li>
-				<li class="nav-item">
-					<a class="btn btn-outline-primary ml-md-2" href="<?= base_url(); ?>inscricao">Inscreva-se</a>
-				</li>
+				<?php if(isset($_SESSION['logadoUsuario'])) { ?>
+					<li class="nav-item dropdown">
+						<a class="btn btn-outline-primary ml-md-2 " id="menuUsuario" role="button" data-toggle="dropdown" arial-haspopup="true" arial-expanded="false" href="#">
+							Perfil
+						</a>
+
+						<div class="dropdown-menu" aria-labelledby="menuUsuario">
+							<a class="dropdown-item" href="<?= base_url('cliente/perfil'); ?>">Meu Perfil</a>
+							<a class="dropdown-item" href="<?= base_url('cliente/pedidos'); ?>">Meus Pedidos</a>
+							<a class="dropdown-item" href="<?= base_url('cliente/sair'); ?>">Sair</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="btn btn-outline-primary ml-md-2" href="<?= base_url('carrinho'); ?>">Carrinho</a>
+					</li>
+				<?php } else { ?>
+					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url('cliente/acessar'); ?>" data-toggle="modal" data-target="#modalLogin">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="btn btn-outline-primary ml-md-2" href="<?= base_url(); ?>inscricao">Inscreva-se</a>
+					</li>
+				<?php } ?>
 			</ul>
 		</div>
 	</nav>
