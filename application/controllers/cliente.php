@@ -7,7 +7,7 @@ class Cliente extends CI_Controller {
     //Metodo para verificação de conta logada do Usuário
     public function verificar_sessao(){
         if ($this->session->userdata('logadoUsuario') == false) {
-            redirect('principal');
+            redirect('login');
         }
     }
 
@@ -30,8 +30,18 @@ class Cliente extends CI_Controller {
             $this->session->set_userdata($dados);            
             redirect('principal');
         } else {
-            redirect('principal');
+            redirect('login');
         }
+    }
+
+    //Metodo para carregar view de Login
+    public function login(){
+
+        $this->load->view('includes/html_header');
+        $this->load->view('includes/menu');
+        $this->load->view('pages/client/login');
+        $this->load->view('includes/html_footer');
+
     }
 
     //Metodo para Eliminar os dados de login da $_SESSION

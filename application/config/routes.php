@@ -58,6 +58,7 @@ $route['inscricao'] = "inscricao/index";
 $route['contato'] = "contato/index";
 $route['local'] = "local/index";
 $route['administracao'] = "administracao/login";
+$route['login'] = "cliente/login";
 
 /* Rotas de Cliente ** Administração de Perfil ** */
 

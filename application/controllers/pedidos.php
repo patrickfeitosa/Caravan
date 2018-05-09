@@ -7,7 +7,7 @@ class Pedidos extends CI_Controller {
     //Metodo para verificação de conta logada do Usuário
     public function verificar_sessao(){
         if ($this->session->userdata('logadoUsuario') == false) {
-            redirect('principal');
+            redirect('login');
         }
     }
 
@@ -28,11 +28,42 @@ class Pedidos extends CI_Controller {
     }
 
     public function adiciona_carrinho(){
-        $data['idCidade'] = $this->input->post('inputCidades');
-        $data['precoLocal'] = $this->input->post('precoLocal');
+        $this->verificar_sessao();
 
-        $_SESSION['itensCarrinho'] = $data;
+        $idCidade = $this->input->post('inputCidades');
+        $precoLocal = str_replace(',','.',preg_replace('#[^\d\,]#is','', $this->input->post('precoLocal')));
+        $tipoPlano = $this->input->post('tipoPlano');
+        $nomeCity = $this->input->post('nomeCidade');
 
-        echo var_dump($_SESSION['itensCarrinho']['precoLocal']);
+        //Verificação se já existe a variavel criado na Sessão
+        if(isset($_SESSION['itensCarrinho'])){
+            $itenCarrinhoId = array_column($_SESSION['itensCarrinho'], 'idCidade');
+
+            if(!in_array($idCidade, $itenCarrinhoId)){
+                $contador = count($_SESSION['itensCarrinho']);
+
+                $item_selecionado = array(
+                'idCidade' => $idCidade,
+                'precoLocal' => $precoLocal,
+                'tipoPlano' => $tipoPlano,
+                'nomeCidade' => $nomeCity
+                );
+    
+                $_SESSION['itensCarrinho'][$contador] = $item_selecionado;
+            } else {
+                echo "<script>alert('Local já adicionado')</script>";
+            }
+
+        } else {
+            $item_selecionado = array(
+            'idCidade' => $idCidade,
+            'precoLocal' => $precoLocal,
+            'tipoPlano' => $tipoPlano,
+            'nomeCidade' => $nomeCity
+            );
+
+            $_SESSION['itensCarrinho'][0] = $item_selecionado;
+        }
+        echo var_dump($_SESSION['itensCarrinho'][0]);
     }
 }

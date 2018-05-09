@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="<?= base_url(); ?>assets/js/ajaxRequisition.js"></script>
     
     <!-- Implementação do footer -->
-	<footer class="bg-dark text-white mt-5">
+	<footer class="bg-dark text-white fixed-bottom">
 
 		<div class="container py-4">
 			<div class="row">

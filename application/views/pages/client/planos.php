@@ -35,6 +35,7 @@
 								<span class="h4" id="precoLocalGold" data-type="Preco" ></span>
 								<input type="hidden" id="localGold" name="precoLocal" >
 								<input type="hidden" name="tipoPlano" value="Gold" >
+								<input type="hidden" id="nomeCidadeGold" name="nomeCidade">
 							</div>
 						</div>
 					</form>
@@ -69,6 +70,7 @@
 								<span class="h4" id="precoLocalPlantinum" data-type="Preco" ></span>
 								<input type="hidden" id="localPlantinum" name="precoLocal" >
 								<input type="hidden" name="tipoPlano" value="Platinum" >
+								<input type="hidden" id="nomeCidadePlatinum" name="nomeCidade">
 							</div>
 						</div>
 					</form>

@@ -42,8 +42,9 @@ $('#inputCidadesGold').change(function(){
 		url: 'http://localhost/caravan/administracao/local/visualizar/' + id, //Definindo o arquivo onde serão buscados os dados
 		success: function(dados){
             for(var i=0;dados.length>i;i++){
-                $('#precoLocalGold').html("R$ " + dados[i].precoLocal);
+                $('#precoLocalGold').html(dados[i].precoLocal);
                 $('#localGold').val(dados[i].precoLocal);
+                $('#nomeCidadeGold').val(dados[i].nomeCity);
             }
 		}
 	});
@@ -60,8 +61,9 @@ $('#inputCidadesPlantinum').change(function(){
                 var price = dados[i].precoLocal.split(".").join(""); //* 1.5;
                 var finalPrice = parseFloat(price.split(",").join(".")) * 1.5;
                 finalPrice = finalPrice.toString().split(".").join(",");
-                $('#precoLocalPlantinum').html("R$ " + finalPrice);
+                $('#precoLocalPlantinum').html(finalPrice);
                 $('#localPlantinum').val(finalPrice);
+                $('#nomeCidadePlantinum').val(dados[i].nomeCity);
             }
 		}
 	});
